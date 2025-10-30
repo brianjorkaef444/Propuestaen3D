@@ -9,8 +9,13 @@ public class FollowCamera : MonoBehaviour
     {
         if (player != null)
         {
-            Vector3 newPos = new Vector3(player.position.x + offset.x, offset.y, player.position.z + offset.z);
-            transform.position = newPos;
+            Vector3 newPos = new Vector3(
+                player.position.x + offset.x,
+                player.position.y + offset.y,
+                player.position.z + offset.z
+            );
+
+            transform.position = newPos; // 👈 Esta línea mueve la cámara
         }
     }
 }
