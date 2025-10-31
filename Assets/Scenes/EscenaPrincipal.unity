@@ -119,6 +119,113 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &478369159
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4797938898370234487, guid: 1fd8950a8e761ad4dac8b6b223a99561, type: 3}
+      propertyPath: m_Name
+      value: PlatformBlock_01 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531254504059201757, guid: 1fd8950a8e761ad4dac8b6b223a99561, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 184.55511
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531254504059201757, guid: 1fd8950a8e761ad4dac8b6b223a99561, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531254504059201757, guid: 1fd8950a8e761ad4dac8b6b223a99561, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.30701
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531254504059201757, guid: 1fd8950a8e761ad4dac8b6b223a99561, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531254504059201757, guid: 1fd8950a8e761ad4dac8b6b223a99561, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531254504059201757, guid: 1fd8950a8e761ad4dac8b6b223a99561, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531254504059201757, guid: 1fd8950a8e761ad4dac8b6b223a99561, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531254504059201757, guid: 1fd8950a8e761ad4dac8b6b223a99561, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531254504059201757, guid: 1fd8950a8e761ad4dac8b6b223a99561, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8531254504059201757, guid: 1fd8950a8e761ad4dac8b6b223a99561, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1fd8950a8e761ad4dac8b6b223a99561, type: 3}
+--- !u!1 &657554338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 657554340}
+  - component: {fileID: 657554339}
+  m_Layer: 0
+  m_Name: 'LevelGenerator '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &657554339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657554338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2493f0c2f0cfb3479b0d89152a9bfff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelGenerator
+  platformPrefabs:
+  - {fileID: 4797938898370234487, guid: 8bd9ac3d00525bb4abce13b01f035a5b, type: 3}
+  - {fileID: 4797938898370234487, guid: 1fd8950a8e761ad4dac8b6b223a99561, type: 3}
+  - {fileID: 4797938898370234487, guid: 6520bb88e7fb8024388ffdf5ea921bd7, type: 3}
+  numberOfPlatforms: 3
+  startPoint: {fileID: 1137983448}
+--- !u!4 &657554340
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657554338}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 210.60893, y: 0, z: 86.53195}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &969409058
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,6 +440,37 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1137983447
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1137983448}
+  m_Layer: 0
+  m_Name: StartPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1137983448
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137983447}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1165083292
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,7 +621,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
   scoreText: {fileID: 1165083294}
-  highScoreText: {fileID: 0}
+  highScoreText: {fileID: 1594454242}
   scoreMultiplier: 1
   score: 0
 --- !u!1 &1374359583
@@ -680,8 +818,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 12
+  m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -718,7 +856,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 25.928787, y: 0, z: 0, w: 15.276886}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1022,7 +1160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
   scoreText: {fileID: 1165083294}
-  highScoreText: {fileID: 0}
+  highScoreText: {fileID: 1594454242}
   scoreMultiplier: 2
   score: 0
 --- !u!4 &2023680370
@@ -1203,3 +1341,6 @@ SceneRoots:
   - {fileID: 1449912983}
   - {fileID: 2023680370}
   - {fileID: 1616473247}
+  - {fileID: 478369159}
+  - {fileID: 657554340}
+  - {fileID: 1137983448}
