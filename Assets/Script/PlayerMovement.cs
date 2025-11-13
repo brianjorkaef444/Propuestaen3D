@@ -19,10 +19,20 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     private HighScoreManager highScoreManager;
 
+    [Header("Efecto de velocidad (Boost)")]
+    public float boostedSpeed = 10f;    // Velocidad temporal aumentada
+    public float boostDuration = 3f;    // Duración del efecto
+    private float boostTimer = 0f;
+    private bool isBoosted = false;
+    private Vector3 originalScale;      // Para guardar el tamaño original
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+
+        // Guardar el tamaño original del jugador
+        originalScale = transform.localScale;
 
         // Buscar el HighScoreManager al iniciar
         highScoreManager = Object.FindFirstObjectByType<HighScoreManager>();
@@ -36,8 +46,11 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = transform.right * moveX + transform.forward * moveZ;
 
+        // Si está en modo boost, usa la velocidad aumentada
+        float currentSpeed = isBoosted ? boostedSpeed : speed;
+
         // Aplica la velocidad multiplicada por la dificultad
-        Vector3 velocity = move * speed * difficultyMultiplier;
+        Vector3 velocity = move * currentSpeed * difficultyMultiplier;
         velocity.y = rb.linearVelocity.y; // Mantiene la gravedad
         rb.linearVelocity = velocity;
     }
@@ -56,6 +69,17 @@ public class PlayerMovement : MonoBehaviour
         // Incrementa la dificultad con el tiempo
         difficultyMultiplier += Time.deltaTime * difficultyIncreaseRate;
 
+        // Efecto de velocidad temporal (cuenta regresiva)
+        if (isBoosted)
+        {
+            boostTimer -= Time.deltaTime;
+            if (boostTimer <= 0f)
+            {
+                isBoosted = false;
+                transform.localScale = originalScale; // vuelve al tamaño original
+            }
+        }
+
         // Suma score usando ScoreManager y la dificultad
         if (ScoreManager.instance != null)
         {
@@ -66,6 +90,20 @@ public class PlayerMovement : MonoBehaviour
         if (highScoreManager != null && ScoreManager.instance != null)
         {
             highScoreManager.CheckHighScore(Mathf.FloorToInt(ScoreManager.instance.score));
+        }
+    }
+
+    // Detecta cuando toca un pickup
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Pickup"))
+        {
+            // Activa el boost de velocidad
+            isBoosted = true;
+            boostTimer = boostDuration;
+
+            // Cambia tamaño para que se note el efecto
+            transform.localScale = originalScale * 1.5f;
         }
     }
 }
